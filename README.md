@@ -100,6 +100,6 @@ Refer to `railway-backend/main.py` for full endpoint behavior and request/respon
 - Add a license file (e.g. `LICENSE`) or change this section to the chosen license.
 
 **Contact**
-- If you want help or want to collaborate, open an issue or contact the repo owner.
+- If you want help or want to collaborate, open an issue or contact the repo owner at farhanbinrabbani@gmail.com.
 
 ---
