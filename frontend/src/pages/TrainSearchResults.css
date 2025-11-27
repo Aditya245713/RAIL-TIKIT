@@ -1,0 +1,442 @@
+/* TrainSearchResults.css */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.search-results-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.search-results-left {
+  flex: 1;
+  background-image: url('../assets/images/login_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.search-results-right {
+  flex: 1;
+  background: linear-gradient(135deg, #000000, #1a1a2e, #16213e, #8B4513);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.search-results-container {
+  background: transparent;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.search-header {
+  background: rgba(2, 15, 20, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-header h1 {
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.search-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-info span {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.loading {
+  background: rgba(2, 15, 20, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.error-message {
+  background: rgba(231, 76, 60, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.error-message p {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0 0 20px 0;
+}
+
+.no-trains {
+  background: rgba(2, 15, 20, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 50px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.no-trains h2 {
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.no-trains p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin: 0 0 25px 0;
+}
+
+.trains-list h2 {
+  background: rgba(2, 15, 20, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin: 0 0 20px 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.train-card {
+  background: rgba(2, 15, 20, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.train-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.train-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.train-info h3 {
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.train-details {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.train-id, .train-type {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.train-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 150px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+}
+
+.btn-primary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(52, 152, 219, 0.5);
+}
+
+.btn-primary:hover {
+  background: rgba(52, 152, 219, 0.2);
+  border-color: rgba(52, 152, 219, 0.8);
+  transform: translateY(-2px);
+}
+
+.btn-tickets {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: 2px solid rgba(52, 152, 219, 0.8);
+}
+
+.btn-tickets:hover {
+  background: linear-gradient(135deg, #2980b9, #1f5f99);
+  border-color: rgba(52, 152, 219, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-routes {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: white;
+  border: 2px solid rgba(243, 156, 18, 0.8);
+}
+
+.btn-routes:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+  border-color: rgba(243, 156, 18, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.btn-routes:disabled {
+  background: rgba(189, 195, 199, 0.3);
+  border-color: rgba(189, 195, 199, 0.5);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Route Display Styles */
+.route-display {
+  margin-top: 25px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.route-display h4 {
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.route-section {
+  margin-bottom: 25px;
+}
+
+.route-info {
+  margin-bottom: 20px;
+}
+
+.route-distance {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 8px 15px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.stations-list {
+  position: relative;
+  margin-left: 20px;
+}
+
+.station-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.station-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  position: relative;
+}
+
+.location-pin {
+  font-size: 1.5rem;
+  color: #667eea;
+  text-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  z-index: 2;
+  background: rgba(2, 15, 20, 0.8);
+  padding: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-8px);
+}
+
+.connecting-line {
+  width: 3px;
+  height: 60px;
+  background: linear-gradient(180deg, #667eea, #764ba2);
+  margin-top: 8px;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.station-info {
+  flex: 1;
+  padding-top: 2px;
+}
+
+.station-info strong {
+  color: #ffffff;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.station-times {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.station-times span {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.no-routes {
+  text-align: center;
+  padding: 30px 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.modify-search-section {
+  background: rgba(2, 15, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.modify-search-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.modify-search-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .search-results-page {
+    flex-direction: column;
+  }
+
+  .search-results-left {
+    height: 40vh;
+  }
+
+  .search-results-right {
+    height: 60vh;
+    padding: 15px;
+  }
+
+  .search-header h1 {
+    font-size: 2rem;
+  }
+
+  .train-card-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .train-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .station-times {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .route-display {
+    padding: 20px 15px;
+  }
+}
